@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elavarasi | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #faf9ff;
+    color: #29243b;
+}
+
+:root {
+    --primary: #7956dc;
+    --dark: #29243b;
+    --light: #eee9ff;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px #0000000a;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 27px;
+    font-weight: 800;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+section {
+    padding: 90px 10%;
+    scroll-margin-top: 75px;
+}
+
+.home {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(120deg,#f2edff,#ffffff);
+}
+
+.home-content {
+    max-width: 620px;
+}
+
+.welcome {
+    color: var(--primary);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.home h1 {
+    font-size: clamp(40px,6vw,65px);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.home h1 span {
+    color: var(--primary);
+}
+
+.home h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.home p {
+    color: #777185;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    background: var(--primary);
+    color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--dark);
+    transform: translateY(-4px);
+}
+
+.profile {
+    width: 290px;
+    height: 340px;
+    flex-shrink: 0;
+    border-radius: 45% 45% 20px 20px;
+    background: linear-gradient(135deg,#ded1ff,#f6e6f5);
+    border: 4px solid white;
+    box-shadow: 15px 15px 0 #d6c8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: var(--primary);
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    color: #716b80;
+    line-height: 1.9;
+}
+
+.about-content h3 {
+    color: var(--dark);
+    margin: 25px 0 10px;
+}
+
+.skills {
+    background: #f0ebff;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.skill {
+    padding: 25px 10px;
+    background: white;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 5px 20px #00000008;
+    transition: .3s;
+}
+
+.skill:hover {
+    color: var(--primary);
+    transform: translateY(-7px);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px #0000000b;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-image {
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.paw {
+    background: linear-gradient(135deg,#eea5c7,#a65c99);
+}
+
+.cine {
+    background: linear-gradient(135deg,#27213b,#7654d8);
+}
+
+.uiux {
+    background: linear-gradient(135deg,#8b9cf5,#5641a9);
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    margin-bottom: 12px;
+}
+
+.project-info p {
+    color: #777185;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.project-info a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.education {
+    background: #f0ebff;
+}
+
+.edu-card {
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 25px;
+    background: white;
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.edu-card h3 {
+    color: var(--primary);
+}
+
+.contact-content {
+    text-align: center;
+    color: #777185;
+    line-height: 2.2;
+}
+
+.contact-content a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width:850px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .profile {
+        width: 220px;
+        height: 250px;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:550px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Ela.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+    <div class="home-content">
+
+        <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+
+        <h1>Hello, I'm <span>Elavarasi</span></h1>
+
+        <h3>Web Designer & UI/UX Designer</h3>
+
+        <p>
+            A creative B.Sc. Computer Science graduate
+            passionate about designing beautiful,
+            responsive and user-friendly websites.
+            I love transforming creative ideas into
+            meaningful digital experiences.
+        </p>
+
+        <a href="#projects" class="btn">Explore My Work</a>
+
+    </div>
+
+    <div class="profile">
+        Your Photo
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+    <div class="about-content">
+
+        <p>
+            I'm Elavarasi, a B.Sc. Computer Science graduate
+            interested in Web Design and UI/UX Design.
+            I enjoy creating clean layouts, attractive
+            interfaces and user-friendly digital experiences.
+            I am continuously improving my technical and
+            creative skills through practical projects.
+        </p>
+
+        <h3>My Career Objective</h3>
+
+        <p>
+            To start my career as a Web Designer or UI/UX
+            Designer in a professional organization where
+            I can apply my skills, learn new technologies
+            and contribute to creative digital projects.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+    <h2 class="section-title">
+        My <span>Skills</span>
+    </h2>
+
+    <div class="skill-grid">
+
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Bootstrap</div>
+        <div class="skill">jQuery</div>
+        <div class="skill">Figma</div>
+        <div class="skill">Adobe XD</div>
+        <div class="skill">VS Code</div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+        My <span>Projects</span>
+    </h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <div class="project-image paw">
+                PAW LOVE
+            </div>
+
+            <div class="project-info">
+
+                <h3>Paw Love - Pet Website</h3>
+
+                <p>
+                    A creative pet website designed for
+                    dogs and cats, featuring pet breeds,
+                    grooming services, success stories
+                    and contact information.
+                </p>
+
+                <span>HTML | CSS | JavaScript</span>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-image cine">
+                CINEORA
+            </div>
+
+            <div class="project-info">
+
+                <h3>Cineora - Movie Website</h3>
+
+                <p>
+                    A Netflix-inspired movie streaming
+                    website concept designed using Figma,
+                    with a modern interface and interactive
+                    movie browsing experience.
+                </p>
+
+                <span>Figma | UI Design | Wireframing</span>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-image uiux">
+                UI / UX
+            </div>
+
+            <div class="project-info">
+
+                <h3>UI/UX Design Portfolio</h3>
+
+                <p>
+                    A collection of creative interface
+                    designs, wireframes and prototypes
+                    developed using Figma and Adobe XD.
+                </p>
+
+                <span>Figma | Adobe XD | Prototyping</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section class="education" id="education">
+
+    <h2 class="section-title">
+        My <span>Education</span>
+    </h2>
+
+    <div class="edu-card">
+
+        <h3>B.Sc. Computer Science</h3>
+
+        <p>St. Mary's (Autonomous) College, Thoothukudi</p>
+
+        <p>Manonmaniam Sundaranar University</p>
+
+        <p>Completed: 2026</p>
+
+    </div>
+
+    <div class="edu-card">
+
+        <h3>Master of Digital Designing</h3>
+
+        <p>Assentia Training and Placement Centre</p>
+
+        <p>Web Designing and UI/UX Designing</p>
+
+        <p>Currently Pursuing</p>
+
+    </div>
+
+    <div class="edu-card">
+
+        <h3>Internship</h3>
+
+        <p>Full Stack Web Development</p>
+
+        <p>Postlink Infotech, Thoothukudi</p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+        Let's <span>Connect</span>
+    </h2>
+
+    <div class="contact-content">
+
+        <p>
+            Interested in working together?
+            Feel free to contact me.
+        </p>
+
+        <p>Email:
+            <a href="mailto:YOUR_EMAIL@gmail.com">
+                YOUR_EMAIL@gmail.com
+            </a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a href="YOUR_LINKEDIN_URL" target="_blank">
+                Visit My Profile
+            </a>
+        </p>
+
+        <br>
+
+        <a href="mailto:YOUR_EMAIL@gmail.com" class="btn">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Elavarasi. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
