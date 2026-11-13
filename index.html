@@ -26,6 +26,8 @@ body {
     --light: #eee9ff;
 }
 
+/* HEADER */
+
 header {
     position: sticky;
     top: 0;
@@ -46,7 +48,9 @@ header {
 
 nav {
     display: flex;
-    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 nav a {
@@ -60,10 +64,14 @@ nav a:hover {
     color: var(--primary);
 }
 
+/* COMMON SECTION */
+
 section {
     padding: 90px 10%;
     scroll-margin-top: 75px;
 }
+
+/* HOME */
 
 .home {
     min-height: 88vh;
@@ -144,6 +152,8 @@ section {
     object-position: center 40%;
 }
 
+/* SECTION TITLES */
+
 .section-title {
     text-align: center;
     font-size: 36px;
@@ -153,6 +163,8 @@ section {
 .section-title span {
     color: var(--primary);
 }
+
+/* ABOUT */
 
 .about-content {
     max-width: 850px;
@@ -166,6 +178,8 @@ section {
     color: var(--dark);
     margin: 25px 0 10px;
 }
+
+/* SKILLS */
 
 .skills {
     background: #f0ebff;
@@ -192,6 +206,8 @@ section {
     transform: translateY(-7px);
 }
 
+/* PROJECTS */
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -215,9 +231,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 30px;
-    font-weight: 800;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .paw {
@@ -246,11 +267,13 @@ section {
     margin-bottom: 15px;
 }
 
-.project-info a {
+.project-info span {
     color: var(--primary);
-    text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
 }
+
+/* EDUCATION */
 
 .education {
     background: #f0ebff;
@@ -270,6 +293,8 @@ section {
     color: var(--primary);
 }
 
+/* CONTACT */
+
 .contact-content {
     text-align: center;
     color: #777185;
@@ -282,6 +307,8 @@ section {
     font-weight: bold;
 }
 
+/* FOOTER */
+
 footer {
     background: var(--dark);
     color: white;
@@ -289,7 +316,10 @@ footer {
     padding: 25px;
 }
 
+/* RESPONSIVE DESIGN */
+
 @media(max-width:850px) {
+
     header {
         padding: 18px 5%;
     }
@@ -324,6 +354,7 @@ footer {
 }
 
 @media(max-width:550px) {
+
     header {
         flex-direction: column;
         gap: 15px;
@@ -337,18 +368,16 @@ footer {
         font-size: 29px;
     }
 }
-    nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+
     <div class="logo">Elavarasi</div>
 
     <nav>
@@ -359,6 +388,7 @@ footer {
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
     </nav>
+
 </header>
 
 <!-- HOME -->
@@ -456,10 +486,12 @@ footer {
 
     <div class="project-grid">
 
+        <!-- PAW LOVE PROJECT -->
+
         <div class="project-card">
 
             <div class="project-image paw">
-                PAW LOVE
+                <img src="pawlove.jpg" alt="Paw Love Pet Website">
             </div>
 
             <div class="project-info">
@@ -479,10 +511,12 @@ footer {
 
         </div>
 
+        <!-- CINEORA PROJECT -->
+
         <div class="project-card">
 
             <div class="project-image cine">
-                CINEORA
+                <img src="cineora.jpg" alt="Cineora Movie Website">
             </div>
 
             <div class="project-info">
@@ -502,24 +536,25 @@ footer {
 
         </div>
 
+        <!-- DATA VISUALIZATION PROJECT -->
+
         <div class="project-card">
 
             <div class="project-image uiux">
-                UI / UX
+                <img src="uiux.jpg" alt="Data Visualization Dashboard">
             </div>
 
             <div class="project-info">
 
-                <h3>Data Visualization Dashboard </h3>
+                <h3>Data Visualization Dashboard</h3>
 
                 <p>
-                   Designed a Data Visualization Dashboard using Figma,
-                   featuring pie charts, percentages, high/low values,
-                   and growth comparisons with a clean and user-friendly interface.
-                    using Figma.
+                    Designed a Data Visualization Dashboard using Figma,
+                    featuring pie charts, percentages, high/low values,
+                    and growth comparisons with a clean and user-friendly interface.
                 </p>
 
-                <span>Figma </span>
+                <span>Figma | UI Design</span>
 
             </div>
 
@@ -553,7 +588,6 @@ footer {
 
         <p>Ascentia Training and Placement Centre</p>
         <p>Web Designing and UI/UX Designing</p>
-    
 
     </div>
 
@@ -583,7 +617,8 @@ footer {
             Feel free to contact me.
         </p>
 
-        <p>Email:
+        <p>
+            Email:
             <a href="mailto:elavarasi27006@gmail.com">
                 elavarasi27006@gmail.com
             </a>
@@ -591,7 +626,8 @@ footer {
 
         <p>
             LinkedIn:
-            <a href="http://www.linkedin.com/in/elavarasi-s-189055405" target="_blank">
+            <a href="https://www.linkedin.com/in/elavarasi-s-189055405"
+               target="_blank" rel="noopener noreferrer">
                 Visit My Profile
             </a>
         </p>
@@ -605,6 +641,8 @@ footer {
     </div>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
     <p>© 2026 Elavarasi. All Rights Reserved.</p>
