@@ -121,6 +121,8 @@ section {
     transform: translateY(-4px);
 }
 
+/* PROFILE IMAGE */
+
 .profile {
     width: 290px;
     height: 340px;
@@ -132,9 +134,14 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--primary);
-    font-size: 22px;
-    font-weight: bold;
+    overflow: hidden;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .section-title {
@@ -373,7 +380,7 @@ footer {
     </div>
 
     <div class="profile">
-        Your Photo
+        <img src="profile.jpg" alt="Elavarasi">
     </div>
 
 </section>
@@ -528,9 +535,7 @@ footer {
         <h3>B.Sc. Computer Science</h3>
 
         <p>St. Mary's (Autonomous) College, Thoothukudi</p>
-
         <p>Manonmaniam Sundaranar University</p>
-
         <p>Completed: 2026</p>
 
     </div>
@@ -540,9 +545,7 @@ footer {
         <h3>Master of Digital Designing</h3>
 
         <p>Assentia Training and Placement Centre</p>
-
         <p>Web Designing and UI/UX Designing</p>
-
         <p>Currently Pursuing</p>
 
     </div>
@@ -552,7 +555,6 @@ footer {
         <h3>Internship</h3>
 
         <p>Full Stack Web Development</p>
-
         <p>Postlink Infotech, Thoothukudi</p>
 
     </div>
